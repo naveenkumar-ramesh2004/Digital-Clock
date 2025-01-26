@@ -10,6 +10,7 @@ main{
     background:linear-gradient(45deg,#08001f,#30197d);
     color: white;
     position:relative;
+    box-sizing: border-box;
 }
 .container{
     width: 900px;
@@ -79,3 +80,42 @@ main{
 .clock #sec::after{
     content: 'SEC';
 }
+@media (max-width:700px) {
+    .container{
+        width: 325px;
+        height: 100px;
+    }
+    .clock{
+        backdrop-filter: blur(40px);
+
+    }
+    .container::before{
+        content: '';
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: -25px;
+        left:-25px;
+        background: #f41b75;
+        border-radius: 5px;
+        z-index: -1;
+    }
+    .container::after{
+        content: '';
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        bottom: -25px;
+        right:-25px;
+        background: #419aff;
+        border-radius: 50%;
+        z-index: -1;
+    }
+    .clock span{
+        font-size: 20px;
+    }
+    .clock span::after{
+        font-size: 10px;
+    }
+}
+
